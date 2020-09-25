@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {{ title|capfirst }}
+        {% endblock %}
+    </title>
+    {% block styles %}
+        <link rel="stylesheet" href="{% static '/css/jquery-ui.css' %}">
+        <link rel="stylesheet" href="{% static '/js/slick/slick.css' %}">
+        <link rel="stylesheet" href="{% static '/css/main.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    {% endblock %}
+</head>
+<body>
+<div class="wrapper-all">
+    {% block header %}
+        {% include 'mainapp/blocks/inc_header.html' %}
+    {% endblock %}
+    <main>
+
+        {% block head_menu %}
+            {% include 'mainapp/blocks/inc_head_menu_default.html' %}
+        {% endblock %}
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    {% include 'mainapp/blocks/inc_footer.html' %}
+</div>
+{% block js %}
+    {% include 'mainapp/blocks/inc_js.html' %}
+{% endblock %}
+</body>
+</html>

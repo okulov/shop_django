@@ -1,0 +1,27 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+    {{ title|capfirst }}
+{% endblock %}
+
+{% block head_menu %}
+    {% include 'mainapp/blocks/product/inc_product_banner.html' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'mainapp/blocks/product/inc_product_card.html' %}
+    <div class="objk cardsfg"></div>
+    {% include 'mainapp/blocks/product/inc_product_description.html' %}
+    {% include 'mainapp/blocks/product/inc_product_picture.html' %}
+    {% include 'mainapp/blocks/product/inc_product_nabor_ext.html' %}
+    {% include 'mainapp/blocks/product/inc_product_faq.html' %}
+    {% include 'mainapp/blocks/inc_recomendations_sku.html' %}
+    {% include 'mainapp/blocks/inc_map.html' %}
+    {% include 'mainapp/blocks/inc_attantion.html' %}
+    {% include 'mainapp/blocks/inc_ideas.html' %}
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="/static/js/slick/slick.min.js"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load static %}
+<div class="slds-wr">
+    <div class="slider-for">
+        <div><img src="{% static 'img/sldf1.jpg'%}" alt=""></div>
+        <div><img src="{% static 'img/hc2.jpg'%}" alt=""></div>
+        <div><img src="{% static 'img/hc3.jpg'%}" alt=""></div>
+        <div><img src="{% static 'img/hc4.jpg'%}" alt=""></div>
+    </div>
+    <div class="wrt12">
+        <div class="slider-nav">
+            <div><img src="{% static '/img/sldf1.jpg'%}" alt=""></div>
+            <div class="plays"><img src="{% static '/img/hc2.jpg'%}" alt=""></div>
+            <div><img src="{% static '/img/hc3.jpg'%}" alt=""></div>
+            <div><img src="{% static '/img/hc4.jpg'%}" alt=""></div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                fade: true,
+                asNavFor: '.slider-nav'
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                dots: false,
+                centerMode: true,
+                focusOnSelect: true
+            });
+        });
+    </script>
+</div>

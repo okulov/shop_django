@@ -1,0 +1,18 @@
+<nav class="left-menu">
+    <ul>
+        {% for item in menu %}
+            <li>
+                <a {% if item.sub %} data-trigger="false" class="actf" {% endif %} href="/{{ item.url }}">
+                    {{ item.text }}
+                </a>
+                {% if item.sub %}
+                    <ul class="dwn">
+                        {% for sub in item.sub %}
+                            <li><a href="/{{ sub.url }}"> — {{ sub.text }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

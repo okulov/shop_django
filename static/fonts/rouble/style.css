@@ -1,0 +1,10 @@
+@font-face {
+			font-family: "als_rublregular";
+			src: url("../fonts/rouble/rouble.eot");
+			src: url("../fonts/rouble/rouble.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/rouble/rouble.woff") format("woff"),
+			url("../fonts/rouble/rouble.woff2") format("woff2"),
+			url("../fonts/rouble/rouble.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+}

@@ -1,0 +1,350 @@
+/*main media*/
+
+@include breakpoint(max-width 1799px) {
+	.wr {
+		max-width: 1366px;
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.item-catalog .circle {
+		max-width: 320px;
+		height: 320px;
+	}
+
+	.item-catalog {
+		max-width: 46.7%;
+		margin-bottom: 142px;
+	}
+
+	.sld-main {
+		margin-top: -100px;
+	}
+
+	.inner-catalog {
+		padding: 0;
+	}
+
+	.obj {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.gli {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	.owl-items:before {
+		left: 32%;
+		width: 100%;
+	}
+
+
+	.txfg {
+		max-width: 800px;
+	}
+
+	.gl2 {
+		flex-basis: 24.1%;
+	}
+
+	.gl {
+		flex-basis: 24.1%;
+	}
+
+	.vd {
+		background: url(../img/rd.png) no-repeat center/106%;
+	}
+
+	.rg {
+		padding-top: 4%;
+	}
+
+	.copy {
+		padding-left: 0;
+	}
+
+	
+}
+@include breakpoint(max-width 1441px) {
+	.windowlk {
+		left: 69px;
+	}
+
+	.actvinpid {
+		padding: 50px 46px;
+	}
+
+	.cardsfg {
+		margin-top: -30px;
+	}
+
+	.imiz1 {
+		padding-left: 91px;
+		padding-right: 91px;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.impida {
+		max-width: 44.2%;
+		width: 100%;
+	}
+
+	.wr-flpid {
+		padding-left: 127px;
+		max-width: 1140px;
+	}
+
+	.yourpid {
+		margin-left: 5.6%;
+		width: 31%;
+	}
+	.rwort {
+		background: url(../img/ort1.png) no-repeat -12% 0/auto;
+	}
+
+	.k1er {
+		margin-left: 127px;
+		max-width: 1005px;
+
+		img {
+			max-width: 525px;
+			width: 100%;
+		}
+	}
+
+	.rwort2 {
+		background: url(../img/ort2.png) no-repeat -175% 0/auto;
+		padding-left: 117px;
+	}
+
+	.csp {
+		max-width: 980px;
+		right: 0;
+		margin-right: 93px;
+	}
+
+	.tb234 {
+		margin: 0;
+	}
+
+	.inner-lisned {
+		padding: 0 99px 0 141px;
+	}
+
+	.slick-slide img {
+		height: 510px;
+		object-fit: cover;
+	}
+
+	.slds-wr {
+		width: calc(100% - 569px);
+		margin-right: 64px;
+		padding-left: 127px;
+	}
+
+	.sldsd {
+		max-width: 502px;
+		width: 100%;
+		position: relative;
+		top: -63px;
+		padding-right: 97px;
+	}
+
+	.rwmatpid div:nth-child(3) {
+		position: relative;
+		left: -60px;
+	}
+
+	.rwmatpid div:nth-child(2) {
+		position: relative;
+		left: -37px;
+	}
+
+	
+
+	.rwmatpid {
+		padding-left: 61px;
+	}
+
+	// .onepid {
+	//     flex-basis: 17%;
+	// }
+
+	.iuy11 {
+		min-height: 400px;
+	}
+}
+
+
+@include breakpoint(max-width 1367px) {
+
+	.filter {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.lsd22 {
+		display: none;
+	}
+
+	
+
+	.lmeb1 {
+		max-width: 1112px;
+
+		.it-catal {
+			flex-basis: 31%;
+		}
+	}
+
+	header {
+		.wr {
+			padding: 17px 22px;
+		}
+	}
+	.wr {
+		padding: 0 80px;
+	}
+
+	.item-catalog {
+		margin-bottom: 110px;
+	}
+
+	#carouselOne {
+		margin-top: 31px;
+	}
+
+	.objk {
+		margin-bottom: 24px;
+	}
+
+	.maini {
+		height: 113%;
+	}
+
+	.rg {
+		padding-top: 7%;
+	}
+
+	.nb {
+		padding-right: 149px;
+		margin-top: 24px;
+		margin-bottom: 24px;
+	}
+
+	.gli {
+		margin-top: 53px;
+	}
+
+	.h3r {
+		margin-bottom: 13px;
+	}
+
+	.footer {
+		background-color: #f2f2f2;
+		padding: 14px 25px 18px;
+	}
+
+	.txfg2 {
+		margin-top: -11px;
+	}
+
+	.plt {
+		margin-top: 65px;
+	}
+
+	.top-menu {
+		margin-left: 34px;
+	}
+
+	.rg2 {
+		position: relative;
+		top: 27px;
+	}
+
+	.windowlk {
+		left: 5%;
+	}
+
+	.objk {
+		margin-bottom: 24px;
+	}
+
+	.txtmp {
+		top: 9px;
+	}
+
+	#map {
+		height: 550px;
+		overflow: hidden;
+	}
+
+	.objk {
+		margin-bottom: 11px;
+	}
+
+	.iuy11 {
+		min-height: 500px;
+	}
+}
+
+
+
+@include breakpoint(max-width 1364px) {
+	.vd {
+		background: url(../img/rd.png) no-repeat center/cover;
+	}
+
+	.top-menu li {
+		margin-right: 15px;
+	}
+
+
+
+	.inner-gl {
+		max-width: 95%;
+	}
+
+	.txfg {
+		max-width: 790px;
+	}
+}
+
+@include breakpoint(max-width 1200px) {
+	.wrapper {
+		width: 992px;
+	}
+
+	
+}
+
+@include breakpoint(max-width 992px)  {
+	.wrapper {
+		width: 768px;
+	}
+
+}
+@include breakpoint(max-width 769px)  {
+	.wrapper {
+		width: 450px;
+	}
+
+
+}
+
+
+@include breakpoint(max-width 500px)  {
+	
+}
+@include breakpoint(max-width 450px)  {
+	.wrapper {
+		width: 320px;
+	}
+}
+@include breakpoint(max-width 320px)  {}

@@ -1,0 +1,15 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}
+    {{ title|capfirst }}
+{% endblock %}
+{% block content %}
+    {% include 'mainapp/blocks/inc_catalog_filter.html' %}
+    {% include 'mainapp/blocks/inc_catalog_cart.html' %}
+    {% include 'mainapp/blocks/inc_recomendation_blog.html' %}
+    {% include 'mainapp/blocks/inc_promo.html' %}
+    {% include 'mainapp/blocks/inc_ideas.html' %}
+    {% include 'mainapp/blocks/inc_attantion.html' %}
+    {% include 'mainapp/blocks/inc_nabor.html' %}
+    {% include 'mainapp/blocks/inc_recomendations_sku.html' %}
+{% endblock %}
+

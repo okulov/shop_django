@@ -1,0 +1,25 @@
+{% load static %}
+
+<div class="sldcm">
+    <div class="zgcmd">Вам может пригодиться:</div>
+    <div class="owl-carousel owl-carousel3 owl-theme">
+        {% for i in rec %}
+        <div>
+            <div class="circ" href="#"></div>
+            <div class="imgcmd"><img src="{% static '/img/cmd1.jpg' %}" alt=""></div>
+            <strong class="strcmd">Дубовый комод</strong>
+            <div class="prccmd">12 999 <span>a</span></div>
+            <a data-fancybox data-src="#popcomment2" class="btncmd" href="#">Подробнее</a>
+        </div>
+        {% endfor %}
+    </div>
+    <script>$(document).ready(function () {
+        $('.owl-carousel3').owlCarousel({
+            items: 3,
+            margin: 15,
+            dots: false,
+            nav: true,
+            navText: [' ', ' '],
+        });
+    });</script>
+</div>

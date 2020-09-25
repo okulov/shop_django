@@ -1,0 +1,118 @@
+ <div class="map">
+        <div class="txtmp">
+            <div id="18" class="windowlk">
+                <a class="cl" href=""><img src="/static/img/cls.png" alt=""></a>
+                <div class="imjklw"><img src="/static/img/imwindow.jpg" alt=""></div>
+                <div class="wrww">
+                    <div class="strw1">ТЦ «Европейский»</div>
+                    <div class="adrw">Режим работы: Пн-Пт: 09-21; Сб-Вс: 10-20</div>
+                    <div class="adrw">ул. Комсомольская, 22</div>
+                    <a class="btnw" href="#">Построить маршрут</a>
+                </div>
+            </div>
+            <div id="19" class="windowlk">
+                <a class="cl" href=""><img src="/static/img/cls.png" alt=""></a>
+                <div class="imjklw"><img src="/static/img/imwindow.jpg" alt=""></div>
+                <div class="wrww">
+                    <div class="strw1">ТЦ «Европейский2»</div>
+                    <div class="adrw">Режим работы: Пн-Пт: 09-21; Сб-Вс: 10-20</div>
+                    <div class="adrw">ул. Комсомольская, 22</div>
+                    <a class="btnw" href="#">Построить маршрут</a>
+                </div>
+            </div>
+            <strong>Приезжайте <br>
+                в гости</strong>
+            <div>Убедитесь, что наша мебель удобная. <br><br> Или свяжитесь с нами</div>
+            <a class="bnt bnm2" href="tel:+74952003682"><span class="icon-Group-7"></span><em>+7 495 200-36-82</em></a>
+        </div>
+        <div id="map"></div>
+        <!-- Создаём карту -->
+        <script>
+					$(document).ready(function(){
+						var objMap = false;
+						ymaps.ready(function () {
+							var myMap = new ymaps.Map('map', {
+								center: [55.751574, 37.573856],
+								zoom: 12,
+								controls: []
+							});
+							myMap.behaviors.disable('scrollZoom');
+							var myPlacemark = new ymaps.Placemark([55.753215,37.622504], null, {
+								iconLayout: 'default#image',
+						    		iconImageHref: '/static/img/map1.png',
+						    		iconImageSize: [40, 53],
+						    		iconImageOffset: [-16, -16],
+						    		windowId: 18
+						    	});
+							myPlacemark.events.add('click', function(e) {
+								if(objMap != false) {
+									objMap.options.set('iconImageHref', '/static/img/map1.png');
+									objMap.options.set('oldImage', '/static/img/map1.png');
+									objMap = false;
+								}
+								var target = e.get('target');
+								objMap = target;
+								$('.windowlk').fadeOut(400);
+								$('#' + target.options.get('windowId')).fadeIn(300);
+								target.options.set('iconImageHref', '/static/img/map2.png');
+								target.options.set('oldImage', '/static/img/map2.png');
+							});
+
+							myPlacemark.events.add('mouseenter', function (e) {
+								var target = e.get('target');
+								target.options.set('oldImage', target.options.get('iconImageHref'));
+								target.options.set('iconImageHref', '/static/img/map3.png');
+							})
+							.add('mouseleave', function (e) {
+								var target = e.get('target');
+								target.options.set('iconImageHref', target.options.get('oldImage'));
+							});
+
+							myMap.geoObjects.add(myPlacemark);
+
+							var myPlacemark = new ymaps.Placemark([55.753215,37.669604], null, {
+								iconLayout: 'default#image',
+						    		iconImageHref: '/static/img/map1.png',
+						    		iconImageSize: [40, 53],
+						    		iconImageOffset: [-16, -16],
+						    		windowId: 19
+						    	});
+
+							myPlacemark.events.add('click', function(e) {
+								if(objMap != false) {
+									objMap.options.set('iconImageHref', '/static/img/map1.png');
+									objMap.options.set('oldImage', '/static/img/map1.png');
+									objMap = false;
+								}
+								var target = e.get('target');
+								objMap = target;
+								$('.windowlk').fadeOut(400);
+								$('#' + target.options.get('windowId')).fadeIn(300);
+								target.options.set('iconImageHref', '/static/img/map2.png');
+								target.options.set('oldImage', '/static/img/map2.png');
+							});
+
+							myPlacemark.events.add('mouseenter', function (e) {
+								var target = e.get('target');
+								target.options.set('oldImage', target.options.get('iconImageHref'));
+								target.options.set('iconImageHref', '/static/img/map3.png');
+							})
+							.add('mouseleave', function (e) {
+								var target = e.get('target');
+								target.options.set('iconImageHref', target.options.get('oldImage'));
+							});
+
+
+							myMap.geoObjects.add(myPlacemark);
+
+							$('.cl').click(function(){
+								objMap.options.set('iconImageHref', 'static/img/map1.png');
+								objMap.options.set('oldImage', 'static/img/map1.png');
+								$('.windowlk').fadeOut(300);
+								return false;
+							});
+						});
+					});
+
+        </script>
+    </div>

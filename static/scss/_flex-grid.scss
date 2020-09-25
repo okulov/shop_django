@@ -1,0 +1,215 @@
+//=========================scss example: @include adaptiv(sm);=======================
+// @mixin adaptiv-max($media){
+//     @if $media == xs{
+//    	@media only screen and (max-width: 480px) {@content}
+//     }
+//     @else if $media == sm{
+//         @media only screen and (max-width: 576px) {@content}
+//     }
+//     @else if $media == md{
+//         @media only screen and (max-width: 768px) {@content}
+//     }
+//     @else if $media == lg{
+//         @media only screen and (max-width: 992px) {@content}
+//     }
+//     @else if $media == xl{
+//         @media only screen and (max-width: 1170px) {@content}
+//     }
+// }
+// //========================================================================================
+// @mixin adaptiv-min($media){
+//     @if $media == xs{
+//     	@media only screen and (min-width: 480px) {@content}
+//     }
+//     @else if $media == sm{
+//         @media only screen and (min-width: 576px) {@content}
+//     }
+//     @else if $media == md{
+//         @media only screen and (min-width: 768px) {@content}
+//     }
+//     @else if $media == lg{
+//         @media only screen and (min-width: 992px) {@content}
+//     }
+//     @else if $media == xl{
+//         @media only screen and (min-width: 1170px) {@content}
+//     }
+// }
+//========================================================================================
+// @mixin adaptiv($media){
+//     @if $media == xs{
+//     	@media only screen and (max-width: 480px) {@content}
+//     }
+//     @else if $media == sm{
+//         @media only screen and (min-width: 481px) and (max-width: 576px) {@content}
+//     }
+//     @else if $media == md{
+//         @media only screen and (min-width: 577px) and (max-width: 768px) {@content}
+//     }
+//     @else if $media == lg{
+//         @media only screen and (min-width: 769px) and (max-width: 992px) {@content}
+//     }
+//     @else if $media == xl{
+//         @media only screen and (min-width: 993px) and (max-width: 1170px) {@content}
+//     }
+// }
+// //////////////
+// @mixin media($media){
+//     @media only screen and (max-width: $media) {@content}
+// }
+
+//===============================scss example: @include col-xs(6); 2 Section 6 columns===========
+
+$one: 1.171875%;
+$xl: 1200px;
+$lg: 992px;
+$md: 769px;
+$sm: 450px;
+$xs: 320px;
+
+@mixin col-xs($a: 12, $b: 12){
+    $a: 12!global;
+    $b: 12!global;
+    @media only screen and (max-width: $xs){
+        $i: 100% / $b;
+        flex-basis: $i * $a - $one*2;
+    }
+}
+//===============================scss example: @include col-sm(6); 2 Section 6 columns===========
+@mixin col-sm($a: 12, $b: 12){
+    $a: 12!global;
+    $b: 12!global;
+    @media only screen and (max-width: $sm){
+        $i: 100% / $b;
+        flex-basis: $i * $a - $one*2;
+    }
+}
+//===============================scss example: @include col-md(6); 2 Section 6 columns===========
+@mixin col-md($a: 12, $b: 12){
+    $a: 12!global;
+    $b: 12!global;
+    @media only screen and (max-width: $md){
+        $i: 100% / $b;
+        flex-basis: $i * $a - $one*2;
+    }
+}
+//===============================scss example: @include col-lg(6); 2 Section 6 columns===========
+@mixin col-lg($a: 12, $b: 12){
+    $a: 12!global;
+    $b: 12!global;
+    @media only screen and (max-width: $lg){
+        $i: 100% / $b;
+        flex-basis: $i * $a - $one*2;
+    }
+}
+//===============================scss example: @include col-lg(6); 2 Section 6 columns===========
+@mixin col-xl($a: 12, $b: 12){
+    $a: 12!global;
+    $b: 12!global;
+    @media only screen and (max-width: $xl){
+        $i: 100% / $b;
+        flex-basis: $i * $a - $one*2;
+    }
+}
+
+//===================scss example: @include col-a(6, 12, lg);===============
+//===================scss example: @include col-a(6, 12, 750px);============
+@mixin col-a($xl: 1200px, $quantity:12, $grid:12 ){
+	$quantity: 12!global;
+	$grid: 12!global;
+	$xl: 1280!global;
+		@media only screen and (max-width: $xl){
+			$x:100% / $grid;
+	flex-basis: $x*$quantity - 1.171875% *2;}
+}
+
+//================================================================
+//==========================scss example: @include col(6); 2 Section 6 columns=======
+//==========================scss example: @include col(5, 27); 5 columns of 27 columns=======
+
+@mixin col($quantity: 12, $grid: 12){
+		$colum: 100% / $grid;
+		flex-basis: $colum * $quantity - $one*2;
+        box-sizing: border-box;
+	}
+
+@mixin col-l($quantity: 12, $grid: 12){
+		$colum: 100% / $grid;
+		flex-basis: $colum * $quantity - 1.171875%*2;
+        box-sizing: border-box;
+    	margin: 0 1.171875% 0 -1.171875%;
+	}
+
+@mixin col-r($quantity: 12, $grid: 12){
+		$colum: 100% / $grid;
+		flex-basis: $colum * $quantity - 1.171875%*2;
+        box-sizing: border-box;
+    	margin: 0 -1.171875% 0 1.171875%;
+	}
+
+     @mixin row{
+        // margin: 0 -1.171875%;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+     }
+
+    //==========================scss example: @include center();=======
+
+     @mixin center {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        // box-sizing: border-box;
+     }
+
+    @mixin align($gorizontal: space-between, $vertical: stretch) {
+        justify-content: $gorizontal;
+        align-items: $vertical;
+    }
+    ///////////////////////////////////////////////////
+     @mixin around {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        // box-sizing: border-box;
+     }
+    //////////////////////////////////////////////////////
+     @mixin between {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        -webkit-display: flex;
+        -moz-display: flex;
+        -ms-display: flex;
+        -o-display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // box-sizing: border-box;
+     }
+

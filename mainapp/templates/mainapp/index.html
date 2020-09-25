@@ -1,0 +1,16 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}
+    {{ title|capfirst }}
+{% endblock %}
+{% block head_menu %}
+    {% include 'mainapp/blocks/inc_index_head.html' %}
+{% endblock %}
+{% block content %}
+    {% include 'mainapp/blocks/inc_main_menu.html' %}
+    <div class="objk"></div>
+    {% include 'mainapp/blocks/inc_attantion.html' %}
+    {% include 'mainapp/blocks/inc_nabor.html' %}
+    {% include 'mainapp/blocks/inc_map.html' %}
+    <div class="objk"></div>
+    {% include 'mainapp/blocks/inc_ideas.html' %}
+{% endblock %}

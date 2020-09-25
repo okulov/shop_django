@@ -1,0 +1,63 @@
+// .middle {
+//   @include vertical;
+//   font-size: 20px;
+//   height: 400px;
+//   border: 1px solid #000;
+//   text-align: center;
+// }
+
+@mixin vertical {
+	font-size: 0;
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 0;
+		height: 100%;
+	}
+}
+
+// ol {
+//   list-style: none;
+//   @include counter(li);
+// }
+
+@mixin counter($char) {
+	counter-reset: $char;
+	& > li:before {
+		content: counter($char);
+		counter-increment: $char;
+	}
+}
+
+@mixin placeholder-color($color) {
+	&:-moz-placeholder,
+	&::-moz-placeholder {
+		color: $color;
+		opacity: 1;
+	}
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+}
+
+// @include font('opensans', 'opensans') {
+//     font-style: normal; Для курсива italic
+//     font-weight: 400; /*если regular*/
+// } /*Название шрифта для css и название файла*/
+
+@mixin font($alias, $name) {
+	@font-face {
+		font-family: $alias;
+		src: url("../fonts/" + $name + ".eot");
+		src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff2") format('woff2'), url("../fonts/" + $name + ".woff?ver1.0") format("woff"), url("../fonts/" + $name + ".ttf") format("truetype"), url("../fonts/" + $name + ".svg#" + $name + "") format("svg");
+		@content;
+	}
+}
+
+@mixin br($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}

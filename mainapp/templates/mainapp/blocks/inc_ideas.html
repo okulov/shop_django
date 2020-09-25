@@ -1,0 +1,21 @@
+{% load static %}
+
+<div class="vd">
+        <div class="h3r">Идеи для вдохновения</div>
+        <div class="txth3">Подписывайтесь на <a href="#">@ommatress.ru</a></div>
+    <div class="gli">
+    {% for i in ideas %}
+            <div class="gl">
+                <img src="/static/img/r1.jpg" alt="">
+                <div class="gl2">
+                    <div class="inner-gl">
+                        <div class="ava"><img src="/static/img/ava.png" alt=""></div>
+                        <div class="txta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <a class="injh" href="#"><img src="/static/img/ins.svg" alt="">@instagirl_1990</a>
+                        <a class="bnbm" href="#">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
