@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Category, Product
 
 # Create your views here.
 ideas = range(4)
@@ -49,6 +50,8 @@ menu = [
     }
 ]
 
+menu = Category.objects.all()
+sku = Product.objects.all()
 
 def main(request):
     context = {

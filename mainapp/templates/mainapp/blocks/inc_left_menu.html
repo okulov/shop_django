@@ -1,9 +1,10 @@
 <nav class="left-menu">
     <ul>
         {% for item in menu %}
+            {% if item.in_Menu %}
             <li>
                 <a {% if item.sub %} data-trigger="false" class="actf" {% endif %} href="/{{ item.url }}">
-                    {{ item.text }}
+                    {{ item.name }}
                 </a>
                 {% if item.sub %}
                     <ul class="dwn">
@@ -13,6 +14,7 @@
                     </ul>
                 {% endif %}
             </li>
+            {% endif %}
         {% endfor %}
     </ul>
 </nav>
