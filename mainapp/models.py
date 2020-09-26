@@ -21,4 +21,4 @@ class Product(models.Model):
     image_main = models.ImageField(verbose_name='рисунок', upload_to='product_image', blank=True)
 
     def __str__(self):
-        return self.name
+        return self.category.name + '/' + self.name
