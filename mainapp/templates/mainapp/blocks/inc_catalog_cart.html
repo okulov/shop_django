@@ -1,13 +1,17 @@
+{% load mathfilters %}
+
 <section class="catalog lmeb1">
-    {% for i in skus %}
+
+    {% for i in products %}
+        {%  with gallery=i.images.values %}
         <div class="it-catal">
             <div class="hov">
                 <div class="dwert">
                     <div class="ic2">
-                        <a class="sr1" href="{% url 'product' %}"><span class="icon-ves"></span>
+                        <a class="sr1" href="{{ i.pk }}"><span class="icon-ves"></span>
                             <div class="gl23w"><img src="/static/img/gl2.png" alt=""></div>
                         </a>
-                        <a class="sr2" href="{% url 'product' %}"><span class="icon-Group-10"></span>
+                        <a class="sr2" href=""><span class="icon-Group-10"></span>
                             <div class="gl23w"><img src="/static/img/gl2.png" alt=""></div>
                         </a>
                     </div>
@@ -24,7 +28,7 @@
                 </div>
                 <div class="ln">
                     <strong>200x100 мм</strong>
-                    <div class="rb">12 999 <span class="rub">a</span><img src="/static/img/dwnsld.png" alt=""></div>
+                    <div class="rb"> {{ i.price }} <span class="rub">a</span><img src="/static/img/dwnsld.png" alt=""></div>
                     <div class="drwed">
                         <div class="cls"><img src="/static/img/cls2.png" alt=""></div>
                         <div class="dflines"><strong>200x100 мм</strong>
@@ -38,25 +42,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="wrbr"><a class="bnt" href="{% url 'product' %}">Подробнее</a></div>
+                <div class="wrbr"><a class="bnt" href="/product/{{ i.pk }}">Подробнее</a></div>
             </div>
             <div>
             </div>
             <div class="itemc">
-                <div class="imwr"><img src="/static/img/imgh1.jpg" alt=""></div>
-                <div class="zag">Кровать (с подъемным механизмом) Carrera, бежевый</div>
+                <div class="imwr"><img src=" /media/{{gallery.0.image}} {# /static/img/imgh1.jpg #}" alt=""></div>
+                <div class="zag">{{ i.name }}</div>
                 <div class="btc">
                     <div class="price">
                         <div class="ot">от</div>
-                        <div class="prs">24 652 <span>a</span></div>
+                        <div class="prs">{{ i.price | floatformat }} <span>a</span></div>
                         <div class="prisec">выгода 3 000 руб.</div>
                     </div>
                     <div>
                         <a href="#" class="rsh">в рассрочку от</a>
-                        <div class="prh2">652 <span>a</span>/мес.</div>
+                        <div class="prh2">{{ i.price | div:time_credit |floatformat:0 }} <span>a</span>/мес.</div>
                     </div>
                 </div>
             </div>
         </div>
+        {% endwith %}
     {% endfor %}
 </section>

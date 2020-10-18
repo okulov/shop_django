@@ -21,9 +21,9 @@
         </div>
     </div>
     <ul class="lstcard">
-        <li><span>→</span> Действительно работающая вентиляция</li>
-        <li><span>→</span> Одобрен врачами ортопедами</li>
-        <li><span>→</span> Увеличение фазы глубокого сна</li>
+        {% for text in product.sm_texts.values %}
+        <li><span>→</span> {{ text.text }}</li>
+        {% endfor %}
     </ul>
     <div class="lnwr">
         <div class="ln">

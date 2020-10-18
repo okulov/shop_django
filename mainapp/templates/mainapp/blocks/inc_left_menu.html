@@ -1,9 +1,10 @@
 <nav class="left-menu">
     <ul>
+        <li> <a href="/catalog">Все товары</a></li>
         {% for item in menu %}
             {% if item.in_Menu %}
             <li>
-                <a {% if item.sub %} data-trigger="false" class="actf" {% endif %} href="/{{ item.url }}">
+                <a {% if item.sub %} data-trigger="false" class="actf" {% endif %} href="/catalog/{{ item.url }}">
                     {{ item.name }}
                 </a>
                 {% if item.sub %}

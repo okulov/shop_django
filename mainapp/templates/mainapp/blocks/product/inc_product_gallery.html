@@ -1,17 +1,16 @@
 {% load static %}
 <div class="slds-wr">
     <div class="slider-for">
-        <div><img src="{% static 'img/sldf1.jpg'%}" alt=""></div>
-        <div><img src="{% static 'img/hc2.jpg'%}" alt=""></div>
-        <div><img src="{% static 'img/hc3.jpg'%}" alt=""></div>
-        <div><img src="{% static 'img/hc4.jpg'%}" alt=""></div>
+        {% for image in product.images.values %}
+        <div><img src="/media/{{ image.image }}" alt=""></div>
+        {% endfor %}
+
     </div>
     <div class="wrt12">
         <div class="slider-nav">
-            <div><img src="{% static '/img/sldf1.jpg'%}" alt=""></div>
-            <div class="plays"><img src="{% static '/img/hc2.jpg'%}" alt=""></div>
-            <div><img src="{% static '/img/hc3.jpg'%}" alt=""></div>
-            <div><img src="{% static '/img/hc4.jpg'%}" alt=""></div>
+            {% for image in product.images.values %}
+            <div><img src="/media/{{ image.image }}" alt=""></div>
+            {% endfor %}
         </div>
     </div>
     <script>

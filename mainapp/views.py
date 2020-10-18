@@ -5,53 +5,11 @@ from .models import Category, Product
 ideas = range(4)
 rec = range(3)
 skus = range(8)
-menu = [
-    {
-        "text": "Все товары",
-        "id": "1",
-        "url": "catalog"
-    },
-    {
-        "id": "2",
-        "text": "Матрасы",
-        "url": "catalog",
-        "sub": [{
-            "text": "Двуспальные",
-            "url": "catalog",
-            "id": "10"
-        }, {
-            "text": "Детские",
-            "url": "catalog",
-            "id": "11"
-        }]
-    },
-    {
-        "id": "3",
-        "sub": [{
-            "text": "Столы",
-            "id": "8"
-        }, {
-            "text": "Стулья",
-            "id": "9"
-        }],
-        "text": "Шкафы"
-    },
-    {
-        "id": "4",
-        "text": "Постельное белье"
-    },
-    {
-        "id": "5",
-        "text": "Ароматы"
-    },
-    {
-        "id": "6",
-        "text": "Акции"
-    }
-]
+time_credit = 12
 
 menu = Category.objects.all()
 sku = Product.objects.all()
+
 
 def main(request):
     context = {
@@ -61,8 +19,14 @@ def main(request):
     return render(request, 'mainapp/index.html', context=context)
 
 
-def catalog(request):
+def catalog(request, cat=''):
+    if cat:
+        sku = Product.objects.filter(category__url=cat)
+    else:
+        sku = Product.objects.all()
     context = {
+        'products': sku,
+        'time_credit': time_credit,
         'skus': skus,
         'ideas': ideas,
         'menu': menu
@@ -70,8 +34,12 @@ def catalog(request):
     return render(request, 'mainapp/catalogm.html', context=context)
 
 
-def product(request):
+def product(request, pk=None):
+    print(pk)
+    product = Product.objects.get(pk=pk)
     context = {
+        'pk': pk,
+        'product': product,
         'ideas': ideas,
         'rec': rec,
         'comments': ideas,
